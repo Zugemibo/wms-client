@@ -1,0 +1,24 @@
+<div>
+    <input class="input" [formControl]="stockControl" #stock placeholder="Enter barcode">
+    <br>
+    <button type="submit" class="button" (click)="onSubmit(stock.value)">Search</button>
+</div>
+<div class="col-md-6">
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Product barcode</th>
+    <th>Product quantity</th>
+    <th>Space barcode</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let stock of stocks">
+          <td>{{stock.productBarcode}}</td>
+          <td>{{stock.stockAvailable}}</td>
+          <td>{{stock.spaceBarcode}}</td>
+          </tr>
+  </tbody>
+    </table>
+
+  </div>
