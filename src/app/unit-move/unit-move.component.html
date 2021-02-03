@@ -1,0 +1,40 @@
+<div id="content">
+    <h2>Unit move</h2>
+    <div id="container">
+        <form [formGroup]="productMovement" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter space from" formControlName="spaceFrom" />
+                <span class="span-red"
+                    *ngIf="(spaceFrom.dirty || spaceFrom.touched) && spaceFrom.invalid && spaceFrom.errors?.required">
+                    <br>
+                    You must enter source space.
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter product barcode" formControlName="productBarcode" />
+                <span class="span-red"
+                    *ngIf="(productBarcode.dirty || productBarcode.touched) && productBarcode.invalid && productBarcode.errors?.required">
+                    <br>
+                    You must enter product barcode.
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter quantity" formControlName="quantity" />
+                <span class="span-red"
+                    *ngIf="(quantity.dirty || quantity.touched) && quantity.invalid && quantity.errors?.required">
+                    <br>
+                    You must enter product quantity to move.
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter destination" formControlName="spaceWhere" />
+                <span class="span-red"
+                    *ngIf="(spaceWhere.dirty || spaceWhere.touched) && spaceWhere.invalid && spaceWhere.errors?.required">
+                    <br>
+                    You must enter destination space.
+                </span>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!productMovement.valid">Next</button>
+        </form>
+    </div>
+</div>

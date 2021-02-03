@@ -15,13 +15,13 @@ export class ProductCheckComponent implements OnInit {
   stock: ProductStock;
   barcode: string;
 
-  constructor(private personService: TestServiceService) { }
+  constructor(private service: TestServiceService) { }
 
   ngOnInit() {
   }
 
   onSubmit(data: string) {
     const barcode: string = data;
-    this.personService.getStocks(barcode).subscribe(data => this.stocks = data);
+    this.service.getStocks(barcode).subscribe(data => this.stocks = data);
   }
 }

@@ -14,6 +14,8 @@ import { ProductMovementComponent } from './product-movement/product-movement.co
 import { CheckingComponent } from './checking/checking.component';
 import { ProductCheckComponent } from './product-check/product-check.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { UnitMoveComponent } from './unit-move/unit-move.component';
+import { PickingComponent } from './picking/picking.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,13 @@ import { LogInComponent } from './log-in/log-in.component';
     ProductMovementComponent,
     CheckingComponent,
     ProductCheckComponent,
-    LogInComponent
+    LogInComponent,
+    UnitMoveComponent,
+    PickingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
